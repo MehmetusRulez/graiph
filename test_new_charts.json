@@ -1,0 +1,66 @@
+{
+  "data": [
+    {"Month": "January", "Revenue": 150000, "Expenses": 80000, "Profit": 70000},
+    {"Month": "February", "Revenue": 165000, "Expenses": 85000, "Profit": 80000},
+    {"Month": "March", "Revenue": 180000, "Expenses": 90000, "Profit": 90000},
+    {"Month": "April", "Revenue": 195000, "Expenses": 95000, "Profit": 100000}
+  ],
+  "charts": [
+    {
+      "id": "test-area",
+      "type": "area",
+      "title": "Revenue Trend (Area Chart)",
+      "mapping": {
+        "x": "Month",
+        "y": "Revenue",
+        "aggregation": "sum"
+      }
+    },
+    {
+      "id": "test-donut",
+      "type": "donut",
+      "title": "Revenue Distribution (Donut Chart)",
+      "mapping": {
+        "x": "Month",
+        "y": "Revenue"
+      }
+    },
+    {
+      "id": "test-bubble",
+      "type": "bubble",
+      "title": "Revenue vs Profit (Bubble Chart)",
+      "mapping": {
+        "x": "Revenue",
+        "y": "Profit",
+        "size": "Expenses"
+      }
+    },
+    {
+      "id": "test-waterfall",
+      "type": "waterfall",
+      "title": "Profit Waterfall",
+      "mapping": {
+        "x": "Month",
+        "y": "Profit"
+      }
+    },
+    {
+      "id": "test-funnel",
+      "type": "funnel",
+      "title": "Revenue Funnel",
+      "mapping": {
+        "x": "Month",
+        "y": "Revenue"
+      }
+    },
+    {
+      "id": "test-gauge",
+      "type": "gauge",
+      "title": "Total Revenue Gauge",
+      "mapping": {
+        "y": "Revenue",
+        "aggregation": "sum"
+      }
+    }
+  ]
+}
