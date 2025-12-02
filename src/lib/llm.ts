@@ -271,8 +271,8 @@ async function generateAllChartIdeas(
         },
       ],
       response_format: { type: "json_object" },
-      temperature: 0.9, // Maximum creativity for brainstorming
-      max_tokens: 8000, // MUCH more tokens for comprehensive list
+      temperature: 0.7, // Balanced creativity (reduced from 0.9 for speed)
+      max_tokens: 2500, // Further reduced for faster response
     });
 
     const content = completion.choices[0].message.content;
@@ -344,8 +344,8 @@ async function selectBestCharts(
         },
       ],
       response_format: { type: "json_object" },
-      temperature: 0.5, // Balanced temperature for comprehensive selection
-      max_tokens: 6000, // MUCH more tokens to accommodate 10-12 charts
+      temperature: 0.3, // Lower temperature for faster, more focused selection
+      max_tokens: 2000, // Further reduced for speed
     });
 
     const content = completion.choices[0].message.content;
@@ -404,7 +404,7 @@ async function criticizeAndEliminateCharts(
       ],
       response_format: { type: "json_object" },
       temperature: 0.2, // Low temperature for strict evaluation
-      max_tokens: 4000,
+      max_tokens: 3000, // Reduced for faster response
     });
 
     const content = completion.choices[0].message.content;
@@ -524,14 +524,15 @@ export async function generateDashboardSchema(
     // PHASE 2: Select BEST charts
     const schema = await selectBestCharts(request, allChartIdeas);
 
-    // PHASE 3: CRITIC - Eliminate bad charts through self-questioning
-    const finalSchema = await criticizeAndEliminateCharts(schema, request.dataProfile);
+    // PHASE 3: CRITIC - DISABLED FOR SPEED
+    // const finalSchema = await criticizeAndEliminateCharts(schema, request.dataProfile);
+    console.log("   ⚡ Phase 3 (Critic) skipped for faster performance");
 
     console.log("\n" + "=".repeat(60));
-    console.log("✅ THREE-PHASE DASHBOARD GENERATION COMPLETE");
+    console.log("✅ TWO-PHASE DASHBOARD GENERATION COMPLETE");
     console.log("=".repeat(60) + "\n");
 
-    return finalSchema;
+    return schema; // Return directly without Phase 3
   } catch (error) {
     console.error("Error in three-phase dashboard generation:", error);
     throw new Error(
