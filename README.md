@@ -1,6 +1,6 @@
-# Graiph 📊
+# Graiph
 
-**AI-Powered Automatic Dashboard Generator**
+AI-Powered Automatic Dashboard Generator
 
 Transform your CSV data into beautiful, insightful dashboards automatically using advanced AI analysis and quality validation.
 
@@ -10,102 +10,74 @@ Transform your CSV data into beautiful, insightful dashboards automatically usin
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green?logo=openai)](https://openai.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
----
+## What is Graiph?
 
-## 🎯 What is Graiph?
-
-Graiph is an intelligent dashboard generator that analyzes your tabular data and automatically creates the most relevant, insightful visualizations. Unlike traditional BI tools that require manual chart creation, Graiph uses AI to:
-
-- **Understand your data** - Profiles columns, detects data types, identifies relationships
-- **Generate smart visualizations** - Creates 10-12 diverse, meaningful charts automatically
-- **Ensure quality** - Uses a three-phase validation system to eliminate nonsensical charts
-- **Deliver insights** - Produces dashboard-ready visualizations with proper styling
+Graiph is an intelligent dashboard generator that analyzes your tabular data and automatically creates the most relevant, insightful visualizations. Unlike traditional BI tools that require manual chart creation, Graiph uses AI to understand your data, generate smart visualizations, ensure quality through validation, and deliver dashboard-ready charts with professional styling.
 
 ### The Problem It Solves
 
-Traditional dashboard creation is:
-- ❌ Time-consuming (hours of manual work)
-- ❌ Error-prone (easy to create misleading charts)
-- ❌ Requires expertise (need to know which chart types to use)
-- ❌ Tedious (repetitive clicking and configuration)
+Traditional dashboard creation requires hours of manual work, is prone to errors, requires expertise in chart selection, and involves tedious configuration. Graiph makes this instant (seconds instead of hours), smart (AI validates semantic correctness), professional (follows data visualization best practices), and effortless (just upload CSV, download dashboard).
 
-Graiph makes it:
-- ✅ **Instant** - Dashboards in seconds, not hours
-- ✅ **Smart** - AI validates semantic correctness (won't average years or IDs)
-- ✅ **Professional** - Follows data visualization best practices
-- ✅ **Effortless** - Just upload CSV, download dashboard
-
----
-
-## 🚀 Features
+## Features
 
 ### Core Capabilities
 
-- **📤 CSV Upload** - Supports any tabular dataset (e-commerce, HR, finance, IoT, etc.)
-- **🤖 AI-Powered Analysis** - GPT-4o analyzes data and generates optimal visualizations
-- **📊 17 Chart Types** - KPI cards, bar, column, line, area, pie, scatter, heatmap, treemap, funnel, and more
-- **🎨 Beautiful Design** - Matplotlib-generated charts with professional styling
-- **💾 Export Options** - Download all charts as PNG or combined PDF
-- **⚡ Fast Generation** - Complete dashboard in 30-60 seconds
+- CSV Upload: Supports any tabular dataset (e-commerce, HR, finance, IoT, etc.)
+- AI-Powered Analysis: GPT-4o analyzes data and generates optimal visualizations
+- 17 Chart Types: KPI cards, bar, column, line, area, pie, scatter, heatmap, treemap, funnel, and more
+- Beautiful Design: Matplotlib-generated charts with professional styling
+- Export Options: Download all charts as PNG or combined PDF
+- Fast Generation: Complete dashboard in 30-60 seconds
 
 ### Three-Phase Quality System
 
-Graiph uses a revolutionary **three-phase generation system** to ensure every chart is perfect:
+Graiph uses a three-phase generation system to ensure every chart is perfect.
 
-#### **Phase 1: Brainstorming** 🧠
-- AI generates EVERY possible chart idea
-- Creates comprehensive catalog of visualizations
-- Uses maximum creativity (temperature 0.9)
+**Phase 1: Brainstorming**
+The AI generates every possible chart idea and creates a comprehensive catalog of visualizations using maximum creativity.
 
-#### **Phase 2: Selection** 🎯
-- AI selects the BEST charts from the catalog
-- Ensures diversity (7-9 different chart types)
-- Guarantees column coverage (uses all relevant columns)
-- Respects user preferences (chart type selection, column pairing)
+**Phase 2: Selection**
+The AI selects the best charts from the catalog, ensures diversity (7-9 different chart types), guarantees column coverage (uses all relevant columns), and respects user preferences.
 
-#### **Phase 3: Quality Critic** 🔍
-**The Secret Sauce** - AI becomes a ruthless critic and asks critical questions about EACH chart:
+**Phase 3: Quality Critic**
+The AI becomes a critic and asks critical questions about each chart:
 
-1. **"Does this aggregation make semantic sense?"**
-   - ❌ Eliminates charts like "Average Release_Year" (years are temporal markers, not measurements!)
-   - ❌ Eliminates "Sum of Customer_ID" (IDs aren't metrics!)
-   - ✅ Keeps "Count of Orders by Month", "Average Revenue by Region"
+1. Does this aggregation make semantic sense?
+   - Eliminates charts like "Average Release_Year" (years are temporal markers, not measurements)
+   - Eliminates "Sum of Customer_ID" (IDs aren't metrics)
+   - Keeps "Count of Orders by Month", "Average Revenue by Region"
 
-2. **"Does this provide business value?"**
-   - ❌ Eliminates redundant charts
-   - ❌ Eliminates solid-color heatmaps (no information)
-   - ✅ Keeps charts that reveal trends, patterns, insights
+2. Does this provide business value?
+   - Eliminates redundant charts
+   - Eliminates solid-color heatmaps (no information)
+   - Keeps charts that reveal trends, patterns, insights
 
-3. **"Is this chart readable?"**
-   - ❌ Eliminates line charts with 100+ data points
-   - ❌ Eliminates pie charts with 15+ slices
-   - ✅ Keeps charts with appropriate binning and clear visuals
+3. Is this chart readable?
+   - Eliminates line charts with 100+ data points
+   - Eliminates pie charts with 15+ slices
+   - Keeps charts with appropriate binning and clear visuals
 
-**Only charts that pass ALL tests make it to your dashboard!**
+Only charts that pass all tests make it to your dashboard.
 
 ### Smart Data Validation
 
-Graiph understands data semantics using **universal pattern matching**:
+Graiph understands data semantics using universal pattern matching:
 
 ```
-✅ WILL WORK ON ANY DATASET
-
 Pattern Recognition:
-- *_Year, *_Date → Temporal markers (count, plot distributions)
-- *_ID, *_Key → Identifiers (group by, count unique)
-- Revenue, Price, Quantity → True metrics (safe to average/sum)
+- *_Year, *_Date: Temporal markers (count, plot distributions)
+- *_ID, *_Key: Identifiers (group by, count unique)
+- Revenue, Price, Quantity: True metrics (safe to average/sum)
 
-Applies To:
-- E-commerce: Order_Date, Customer_ID, Order_Value ✓
-- HR: Hire_Year, Employee_ID, Salary ✓
-- Finance: Transaction_Date, Account_ID, Amount ✓
-- IoT: Timestamp, Sensor_ID, Reading ✓
-- Healthcare: Admission_Date, Patient_ID, Cost ✓
+Works with any dataset:
+- E-commerce: Order_Date, Customer_ID, Order_Value
+- HR: Hire_Year, Employee_ID, Salary
+- Finance: Transaction_Date, Account_ID, Amount
+- IoT: Timestamp, Sensor_ID, Reading
+- Healthcare: Admission_Date, Patient_ID, Cost
 ```
 
----
-
-## 🏗️ Architecture
+## Architecture
 
 ### Tech Stack
 
@@ -129,60 +101,38 @@ Applies To:
 ### System Flow
 
 ```
-┌─────────────┐
-│  CSV Upload │
-└──────┬──────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  Data Profiling                      │
-│  - Column types (numeric/categorical)│
-│  - Statistics (min/max/avg)          │
-│  - Missing data detection            │
-│  - Cardinality analysis              │
-└──────┬───────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  PHASE 1: Brainstorming              │
-│  GPT-4o generates ALL chart ideas    │
-│  (30-50 possibilities)               │
-└──────┬───────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  PHASE 2: Selection                  │
-│  GPT-4o selects BEST 10-12 charts    │
-│  (ensures diversity + coverage)      │
-└──────┬───────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  PHASE 3: Quality Critic             │
-│  AI asks critical questions:         │
-│  - Semantic correctness?             │
-│  - Business value?                   │
-│  - Readability?                      │
-│  ELIMINATES charts that fail         │
-└──────┬───────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  Python Backend                      │
-│  Matplotlib generates final charts   │
-│  Returns base64 PNG images           │
-└──────┬───────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────────┐
-│  Dashboard Display                   │
-│  Interactive grid with zoom/download │
-└──────────────────────────────────────┘
+CSV Upload
+    ↓
+Data Profiling
+  - Column types (numeric/categorical)
+  - Statistics (min/max/avg)
+  - Missing data detection
+  - Cardinality analysis
+    ↓
+PHASE 1: Brainstorming
+  GPT-4o generates all chart ideas
+  (30-50 possibilities)
+    ↓
+PHASE 2: Selection
+  GPT-4o selects best 10-12 charts
+  (ensures diversity + coverage)
+    ↓
+PHASE 3: Quality Critic
+  AI asks critical questions:
+  - Semantic correctness?
+  - Business value?
+  - Readability?
+  Eliminates charts that fail
+    ↓
+Python Backend
+  Matplotlib generates final charts
+  Returns base64 PNG images
+    ↓
+Dashboard Display
+  Interactive grid with zoom/download
 ```
 
----
-
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
@@ -241,29 +191,27 @@ python app.py
 # Runs on http://localhost:5001
 ```
 
----
-
-## 🎮 Usage
+## Usage
 
 ### Basic Usage
 
-1. **Upload CSV**
+1. Upload CSV
    - Click the upload area
    - Select your CSV file
    - Data will be profiled automatically
 
-2. **Configure (Optional)**
+2. Configure (Optional)
    - Select specific chart types
    - Choose columns to focus on
    - Set max number of charts
    - Add usage context for better AI understanding
 
-3. **Generate Dashboard**
+3. Generate Dashboard
    - Click "Generate Dashboard"
    - Wait 30-60 seconds for AI analysis
    - View generated charts in interactive grid
 
-4. **Export**
+4. Export
    - Download individual charts as PNG
    - Download all charts as combined PDF
 
@@ -296,23 +244,19 @@ pairings: [
 usageContext: "This is sales data for Q4 2024. Focus on regional performance and product trends."
 ```
 
----
-
-## 🎨 Supported Chart Types
+## Supported Chart Types
 
 | Category | Chart Types |
 |----------|-------------|
-| **KPIs** | Number cards with key metrics |
-| **Comparison** | Bar, Column, Grouped Bar |
-| **Trend** | Line, Area, Stacked Area |
-| **Distribution** | Histogram, Box Plot, Violin Plot |
-| **Correlation** | Scatter, Bubble |
-| **Composition** | Pie, Donut, Treemap |
-| **Advanced** | Heatmap, Funnel, Radar, Gauge |
+| KPIs | Number cards with key metrics |
+| Comparison | Bar, Column, Grouped Bar |
+| Trend | Line, Area, Stacked Area |
+| Distribution | Histogram, Box Plot, Violin Plot |
+| Correlation | Scatter, Bubble |
+| Composition | Pie, Donut, Treemap |
+| Advanced | Heatmap, Funnel, Radar, Gauge |
 
----
-
-## 🧪 Example Datasets
+## Example Datasets
 
 Graiph works with any CSV data. Try these examples:
 
@@ -340,9 +284,7 @@ Timestamp,Sensor_ID,Temperature,Humidity,Location
 ...
 ```
 
----
-
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -369,26 +311,24 @@ if __name__ == '__main__':
 CORS(app, resources={r"/*": {"origins": ["http://localhost:3001"]}})
 ```
 
----
-
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
-**"Port 3000 is already in use"**
+**Port 3000 is already in use**
 ```bash
 # The app will automatically use port 3001
 # Or kill the process using port 3000:
 lsof -ti:3000 | xargs kill -9
 ```
 
-**"OpenAI API Key not found"**
+**OpenAI API Key not found**
 ```bash
 # Make sure .env.local exists and contains your API key
 echo "OPENAI_API_KEY=sk-..." > .env.local
 ```
 
-**"Python backend connection failed"**
+**Python backend connection failed**
 ```bash
 # Ensure Python backend is running
 cd python-backend
@@ -409,18 +349,14 @@ pip install -r requirements.txt
 pip install --upgrade matplotlib
 ```
 
----
+## Performance
 
-## 📊 Performance
+- Dashboard Generation Time: 30-60 seconds (depending on data size)
+- Supported Dataset Size: Up to 100,000 rows (recommended < 50,000 for best performance)
+- Concurrent Users: Scales with OpenAI API rate limits
+- Chart Generation: 8-12 charts per dashboard
 
-- **Dashboard Generation Time**: 30-60 seconds (depending on data size)
-- **Supported Dataset Size**: Up to 100,000 rows (recommended < 50,000 for best performance)
-- **Concurrent Users**: Scales with OpenAI API rate limits
-- **Chart Generation**: 8-12 charts per dashboard
-
----
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -438,55 +374,41 @@ Contributions are welcome! Please follow these steps:
 - Test with multiple dataset types
 - Update README if adding features
 
----
+## Roadmap
 
-## 🗺️ Roadmap
+- Support for Excel files (.xlsx)
+- Real-time data connections (PostgreSQL, MySQL, MongoDB)
+- Custom chart styling/theming
+- Dashboard templates by industry
+- Interactive filters and drill-downs
+- Scheduled dashboard regeneration
+- Multi-language support
+- Cloud deployment (Vercel + Railway)
+- API access for programmatic use
+- Collaborative dashboard editing
 
-- [ ] Support for Excel files (.xlsx)
-- [ ] Real-time data connections (PostgreSQL, MySQL, MongoDB)
-- [ ] Custom chart styling/theming
-- [ ] Dashboard templates by industry
-- [ ] Interactive filters and drill-downs
-- [ ] Scheduled dashboard regeneration
-- [ ] Multi-language support
-- [ ] Cloud deployment (Vercel + Railway)
-- [ ] API access for programmatic use
-- [ ] Collaborative dashboard editing
-
----
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+## Acknowledgments
 
-## 🙏 Acknowledgments
+- OpenAI: GPT-4o powers the intelligent analysis
+- Next.js Team: Amazing React framework
+- Matplotlib Community: Best Python visualization library
 
-- **OpenAI** - GPT-4o powers the intelligent analysis
-- **Next.js Team** - Amazing React framework
-- **Matplotlib Community** - Best Python visualization library
-
----
-
-## ⭐ Star History
+## Star History
 
 If you find Graiph useful, please consider giving it a star on GitHub!
 
 [![Star History Chart](https://api.star-history.com/svg?repos=MehmetusRulez/graiph&type=Date)](https://star-history.com/#MehmetusRulez/graiph&Date)
 
----
+## Why "Graiph"?
 
-## 💡 Why "Graiph"?
+Graiph = Graph + AI + graph
 
-**Graiph** = **Gr**aph + **AI** + gra**ph**
-
-A clever combination representing the fusion of traditional graphing/charting with artificial intelligence. It's memorable, searchable, and reflects the core mission: making data visualization intelligent and effortless.
+A combination representing the fusion of traditional graphing/charting with artificial intelligence. It's memorable, searchable, and reflects the core mission: making data visualization intelligent and effortless.
 
 ---
 
-<div align="center">
-
-[⬆ Back to Top](#graiph-)
-
-</div>
+[Back to Top](#graiph)
