@@ -43,7 +43,7 @@ Graiph makes it:
 
 - **📤 CSV Upload** - Supports any tabular dataset (e-commerce, HR, finance, IoT, etc.)
 - **🤖 AI-Powered Analysis** - GPT-4o analyzes data and generates optimal visualizations
-- **📊 20+ Chart Types** - KPI cards, bar, column, line, area, pie, scatter, heatmap, treemap, waterfall, funnel, and more
+- **📊 17 Chart Types** - KPI cards, bar, column, line, area, pie, scatter, heatmap, treemap, funnel, and more
 - **🎨 Beautiful Design** - Matplotlib-generated charts with professional styling
 - **💾 Export Options** - Download all charts as PNG or combined PDF
 - **⚡ Fast Generation** - Complete dashboard in 30-60 seconds
@@ -308,7 +308,7 @@ usageContext: "This is sales data for Q4 2024. Focus on regional performance and
 | **Distribution** | Histogram, Box Plot, Violin Plot |
 | **Correlation** | Scatter, Bubble |
 | **Composition** | Pie, Donut, Treemap |
-| **Advanced** | Heatmap, Waterfall, Funnel, Radar, Gauge |
+| **Advanced** | Heatmap, Funnel, Radar, Gauge |
 
 ---
 
@@ -466,7 +466,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **OpenAI** - GPT-4o powers the intelligent analysis
 - **Next.js Team** - Amazing React framework
 - **Matplotlib Community** - Best Python visualization library
-- **All Contributors** - Thank you for making Graiph better!
 
 ---
 
@@ -487,8 +486,6 @@ A clever combination representing the fusion of traditional graphing/charting wi
 ---
 
 <div align="center">
-
-**Built with ❤️ by developers who hate manual chart creation**
 
 [⬆ Back to Top](#graiph-)
 
