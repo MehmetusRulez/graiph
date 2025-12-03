@@ -193,7 +193,7 @@ Applies To:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/graiph.git
+git clone https://github.com/MehmetusRulez/graiph.git
 cd graiph
 ```
 
@@ -470,21 +470,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📧 Contact
-
-**Project Maintainer:** Your Name
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-
----
-
 ## ⭐ Star History
 
 If you find Graiph useful, please consider giving it a star on GitHub!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/graiph&type=Date)](https://star-history.com/#yourusername/graiph&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=MehmetusRulez/graiph&type=Date)](https://star-history.com/#MehmetusRulez/graiph&Date)
 
 ---
 
