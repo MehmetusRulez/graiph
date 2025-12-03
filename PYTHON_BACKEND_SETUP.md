@@ -183,11 +183,11 @@ pip install -r requirements.txt --upgrade
 
 ## Benefits of Python Backend
 
-✅ **Professional graphs** - matplotlib/seaborn create publication-quality visualizations
-✅ **No frontend library issues** - Recharts problems are gone
-✅ **More chart types** - Access to full Python visualization ecosystem
-✅ **Better performance** - Graph generation happens on backend
-✅ **Reusable images** - PNG images can be downloaded/shared
+ **Professional graphs** - matplotlib/seaborn create publication-quality visualizations
+ **No frontend library issues** - Recharts problems are gone
+ **More chart types** - Access to full Python visualization ecosystem
+ **Better performance** - Graph generation happens on backend
+ **Reusable images** - PNG images can be downloaded/shared
 
 ---
 

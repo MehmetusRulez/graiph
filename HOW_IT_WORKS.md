@@ -31,18 +31,18 @@ You upload: sales_data.csv
 ### Step 2: Data Profiling
 ```
 System analyzes your data:
-✓ 100 rows found
-✓ 3 columns detected:
+ 100 rows found
+ 3 columns detected:
   - date (datetime type)
   - revenue (numeric type)
   - region (categorical type)
-✓ Sample values extracted
-✓ Missing data analyzed
+ Sample values extracted
+ Missing data analyzed
 ```
 
 ### Step 3: PHASE 1 - AI Planning (GPT-4o)
 ```
-🤖 AI (DASHBOARD PLANNER PRO) thinks:
+ AI (DASHBOARD PLANNER PRO) thinks:
 
 "I see:
 - A datetime column (date) → good for time series
@@ -104,29 +104,29 @@ AI creates this PLAN (draft):
 
 ### Step 4: PHASE 2 - Backend Generation (Validation & Implementation)
 ```
-🔧 INTEGRATED BACKEND SYSTEM receives the plan and thinks:
+ INTEGRATED BACKEND SYSTEM receives the plan and thinks:
 
 "Let me check this plan:
 
 Chart 1: Revenue Trend Over Time
-✓ Type 'line' is supported
-✓ Column 'date' exists in the dataset
-✓ Column 'revenue' exists in the dataset
-✓ Line chart has both x and y mappings
-✓ VALID - Ready to generate
+ Type 'line' is supported
+ Column 'date' exists in the dataset
+ Column 'revenue' exists in the dataset
+ Line chart has both x and y mappings
+ VALID - Ready to generate
 
 Chart 2: Revenue by Region
-✓ Type 'bar' is supported
-✓ Column 'region' exists in the dataset
-✓ Column 'revenue' exists in the dataset
-✓ Bar chart has both x and y mappings
-✓ VALID - Ready to generate
+ Type 'bar' is supported
+ Column 'region' exists in the dataset
+ Column 'revenue' exists in the dataset
+ Bar chart has both x and y mappings
+ VALID - Ready to generate
 
 Chart 3: Total Revenue
-✓ Type 'kpi' is supported
-✓ Column 'revenue' exists in the dataset
-✓ KPI has required y mapping
-✓ VALID - Ready to generate
+ Type 'kpi' is supported
+ Column 'revenue' exists in the dataset
+ KPI has required y mapping
+ VALID - Ready to generate
 
 All charts validated! Applying enhancements:
 - Adding descriptions where missing
@@ -168,7 +168,7 @@ Backend returns:
 Now the ChartRenderer receives the final, validated schema and renders:
 
 ┌─────────────────────────────────────────────────┐
-│  📊 Your AI Dashboard                           │
+│   Your AI Dashboard                           │
 │  3 visualizations | 100 data points             │
 ├─────────────────────────────────────────────────┤
 │                                                  │
@@ -196,21 +196,21 @@ Now the ChartRenderer receives the final, validated schema and renders:
 ### PHASE 1: AI Planning (GPT-4o)
 
 **Responsibilities:**
-- ✅ Analyze data structure and types
-- ✅ Decide which columns are most important
-- ✅ Decide how many charts to create (3-6 optimal)
-- ✅ Decide what TYPE each chart should be (line, bar, pie, etc.)
-- ✅ Decide which columns map to x, y, series
-- ✅ Decide what aggregation to use (sum, avg, count, etc.)
-- ✅ Design the layout grid (2x2, 2x3, etc.)
-- ✅ Create descriptive titles
+-  Analyze data structure and types
+-  Decide which columns are most important
+-  Decide how many charts to create (3-6 optimal)
+-  Decide what TYPE each chart should be (line, bar, pie, etc.)
+-  Decide which columns map to x, y, series
+-  Decide what aggregation to use (sum, avg, count, etc.)
+-  Design the layout grid (2x2, 2x3, etc.)
+-  Create descriptive titles
 
 **Does NOT do:**
-- ❌ Does not validate if columns exist
-- ❌ Does not check if chart types are supported
-- ❌ Does not process actual data
-- ❌ Does not render any visuals
-- ❌ Does not apply transformations
+-  Does not validate if columns exist
+-  Does not check if chart types are supported
+-  Does not process actual data
+-  Does not render any visuals
+-  Does not apply transformations
 
 **Output:** Dashboard Plan (JSON)
 
@@ -219,18 +219,18 @@ Now the ChartRenderer receives the final, validated schema and renders:
 ### PHASE 2: Backend Generation
 
 **Responsibilities:**
-- ✅ Validate each chart in the plan
-- ✅ Check all column references exist in dataset
-- ✅ Verify chart types are supported
-- ✅ Ensure required mappings are present
-- ✅ Add smart enhancements (descriptions, optimal aggregations)
-- ✅ Filter out invalid charts
-- ✅ Return only valid, renderable charts
+-  Validate each chart in the plan
+-  Check all column references exist in dataset
+-  Verify chart types are supported
+-  Ensure required mappings are present
+-  Add smart enhancements (descriptions, optimal aggregations)
+-  Filter out invalid charts
+-  Return only valid, renderable charts
 
 **Does NOT do:**
-- ❌ Does not decide what to show (AI already decided)
-- ❌ Does not change the overall plan intent
-- ❌ Does not make creative decisions
+-  Does not decide what to show (AI already decided)
+-  Does not change the overall plan intent
+-  Does not make creative decisions
 
 **Output:** Final Dashboard Schema (validated & enhanced)
 
@@ -256,9 +256,9 @@ Now the ChartRenderer receives the final, validated schema and renders:
 
 **Backend Validation:**
 ```
-🔧 Validating chart: Profit Analysis
-❌ Column 'profit' not found in dataset
-❌ Chart REJECTED
+ Validating chart: Profit Analysis
+ Column 'profit' not found in dataset
+ Chart REJECTED
 
 Available columns: [date, revenue, region]
 ```
@@ -273,33 +273,33 @@ When you generate a dashboard, you'll see these logs:
 
 ```
 ====================================
-🚀 TWO-PHASE DASHBOARD GENERATION
+ TWO-PHASE DASHBOARD GENERATION
 ====================================
-📊 Dataset: 100 rows, 3 columns
+ Dataset: 100 rows, 3 columns
 
-📝 PHASE 1: AI PLANNING (Draft Creation)
+ PHASE 1: AI PLANNING (Draft Creation)
    AI is analyzing your data and creating a dashboard plan...
-   ✅ AI Plan Created:
+    AI Plan Created:
       - Charts planned: 3
       - Layout: 2x2 grid
       - Chart 1: line - "Revenue Trend Over Time"
       - Chart 2: bar - "Revenue by Region"
       - Chart 3: kpi - "Total Revenue"
 
-🔧 PHASE 2: BACKEND CHART GENERATION (Implementation)
+ PHASE 2: BACKEND CHART GENERATION (Implementation)
    Integrated backend is processing the AI plan...
-   📋 BACKEND CHART GENERATOR: Processing AI plan...
+    BACKEND CHART GENERATOR: Processing AI plan...
       - Total charts in plan: 3
       - Layout: 2x2
       - Validating chart 1/3: Revenue Trend Over Time
       - Validating chart 2/3: Revenue by Region
       - Validating chart 3/3: Total Revenue
-   ✅ BACKEND CHART GENERATOR: Processing complete
+    BACKEND CHART GENERATOR: Processing complete
       - Valid charts: 3
       - Invalid charts: 0
       - Processing time: 12ms
 
-✅ TWO-PHASE GENERATION COMPLETE
+ TWO-PHASE GENERATION COMPLETE
    - Backend processing time: 12ms
    - Final charts: 3/3
 ====================================

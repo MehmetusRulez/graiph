@@ -146,13 +146,3 @@ You can test with any CSV file. Here are some suggestions:
 ## License
 
 This project is open source and available for use.
-
-{
-  "compilerOptions": {
-    // ... başka ayarlar varsa aynen kalsın
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}

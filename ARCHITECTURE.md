@@ -29,12 +29,12 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 │  │  GPT-4o (DASHBOARD PLANNER PRO)                           │  │
 │  │                                                           │  │
 │  │  AI Responsibilities:                                     │  │
-│  │  ✓ Analyze data profile                                  │  │
-│  │  ✓ Decide which columns to visualize                     │  │
-│  │  ✓ Decide how many charts to create (3-6 optimal)        │  │
-│  │  ✓ Decide what type each chart should be                 │  │
-│  │  ✓ Decide x/y/series/aggregation mappings                │  │
-│  │  ✓ Design layout (rows x columns grid)                   │  │
+│  │   Analyze data profile                                  │  │
+│  │   Decide which columns to visualize                     │  │
+│  │   Decide how many charts to create (3-6 optimal)        │  │
+│  │   Decide what type each chart should be                 │  │
+│  │   Decide x/y/series/aggregation mappings                │  │
+│  │   Design layout (rows x columns grid)                   │  │
 │  │                                                           │  │
 │  │  Output: Dashboard Plan (JSON)                           │  │
 │  └───────────────────────────────────────────────────────────┘  │
@@ -61,15 +61,15 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 │  │  Integrated Backend System (chartGenerator.ts)           │  │
 │  │                                                           │  │
 │  │  Backend Responsibilities:                               │  │
-│  │  ✓ Validate AI plan                                      │  │
-│  │  ✓ Check all column references exist                     │  │
-│  │  ✓ Verify chart types are supported                      │  │
-│  │  ✓ Ensure required mappings are present                  │  │
-│  │  ✓ Apply smart enhancements:                             │  │
+│  │   Validate AI plan                                      │  │
+│  │   Check all column references exist                     │  │
+│  │   Verify chart types are supported                      │  │
+│  │   Ensure required mappings are present                  │  │
+│  │   Apply smart enhancements:                             │  │
 │  │    - Auto-generate descriptions if missing               │  │
 │  │    - Infer best aggregation methods                      │  │
 │  │    - Optimize data transformations                       │  │
-│  │  ✓ Return validated, renderable charts                   │  │
+│  │   Return validated, renderable charts                   │  │
 │  │                                                           │  │
 │  │  Output: Final Dashboard Schema                          │  │
 │  └───────────────────────────────────────────────────────────┘  │
@@ -106,10 +106,10 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
    - Chart specifications (type, title, column mappings)
 
 **What the AI Does NOT Do:**
-- ❌ Does not render charts
-- ❌ Does not process the actual data
-- ❌ Does not validate column existence
-- ❌ Does not handle data transformations
+-  Does not render charts
+-  Does not process the actual data
+-  Does not validate column existence
+-  Does not handle data transformations
 
 **Example AI Output (Dashboard Plan):**
 ```json
@@ -161,9 +161,9 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 **What the Backend Does:**
 1. Receives the AI plan (draft)
 2. **Validates each chart:**
-   - ✓ Does the column "revenue" exist in the dataset?
-   - ✓ Is "line" a supported chart type?
-   - ✓ Does a line chart have both x and y mappings?
+   -  Does the column "revenue" exist in the dataset?
+   -  Is "line" a supported chart type?
+   -  Does a line chart have both x and y mappings?
 3. **Enhances charts:**
    - Adds descriptions if missing
    - Infers optimal aggregation methods
@@ -175,13 +175,13 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 
 **Example Backend Processing Log:**
 ```
-📋 BACKEND CHART GENERATOR: Processing AI plan...
+ BACKEND CHART GENERATOR: Processing AI plan...
    - Total charts in plan: 3
    - Layout: 2x2
    - Validating chart 1/3: Revenue Trend
    - Validating chart 2/3: Sales by Region
    - Validating chart 3/3: Total Revenue
-✅ BACKEND CHART GENERATOR: Processing complete
+ BACKEND CHART GENERATOR: Processing complete
    - Valid charts: 3
    - Invalid charts: 0
    - Processing time: 15ms
@@ -214,14 +214,14 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 
 1. **Data Profiling**
    ```
-   📊 Dataset: 100 rows, 3 columns
+    Dataset: 100 rows, 3 columns
    ```
 
 2. **Phase 1: AI Planning**
    ```
-   📝 PHASE 1: AI PLANNING (Draft Creation)
+    PHASE 1: AI PLANNING (Draft Creation)
       AI is analyzing your data and creating a dashboard plan...
-      ✅ AI Plan Created:
+       AI Plan Created:
          - Charts planned: 3
          - Layout: 2x2 grid
          - Chart 1: line - "Revenue Trend"
@@ -231,20 +231,20 @@ Graiph uses a **Two-Phase Dashboard Generation System** where AI creates the pla
 
 3. **Phase 2: Backend Generation**
    ```
-   🔧 PHASE 2: BACKEND CHART GENERATION (Implementation)
+    PHASE 2: BACKEND CHART GENERATION (Implementation)
       Integrated backend is processing the AI plan...
-      📋 BACKEND CHART GENERATOR: Processing AI plan...
+       BACKEND CHART GENERATOR: Processing AI plan...
          - Validating chart 1/3: Revenue Trend
          - Validating chart 2/3: Sales by Region
          - Validating chart 3/3: Total Revenue
-      ✅ BACKEND CHART GENERATOR: Processing complete
+       BACKEND CHART GENERATOR: Processing complete
          - Valid charts: 3
          - Invalid charts: 0
    ```
 
 4. **Completion**
    ```
-   ✅ TWO-PHASE GENERATION COMPLETE
+    TWO-PHASE GENERATION COMPLETE
       - Backend processing time: 15ms
       - Final charts: 3/3
    ```
