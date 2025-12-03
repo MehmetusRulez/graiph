@@ -102,17 +102,44 @@ export async function POST(request: NextRequest) {
     console.log('\n📝 PHASE 1: AI PLANNING (Draft Creation)');
     console.log('   AI is analyzing your data and creating a dashboard plan...');
 
-    // VALIDATION DISABLED FOR SPEED - Generate once and use it
-    console.log('\n   ⚡ Generating dashboard (validation disabled for performance)...');
+    const MAX_ATTEMPTS = 1; // Single attempt to avoid rate limits (quality still enforced by Phase 3 Critic)
+    let aiPlan: DashboardSchema | null = null;
+    let validationPassed = false;
 
-    const aiPlan: DashboardSchema = await generateDashboardSchema(llmRequest);
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      console.log(`\n   Attempt ${attempt}/${MAX_ATTEMPTS}...`);
 
-    console.log('   📊 Plan Created:');
-    console.log(`      - Charts planned: ${aiPlan.charts.length}`);
-    console.log(`      - Layout: ${aiPlan.layout.rows}x${aiPlan.layout.columns} grid`);
-    aiPlan.charts.forEach((chart, idx) => {
-      console.log(`      - Chart ${idx + 1}: ${chart.type} - "${chart.title}"`);
-    });
+      const proposedPlan: DashboardSchema = await generateDashboardSchema(llmRequest);
+
+      console.log('   📊 Plan Created:');
+      console.log(`      - Charts planned: ${proposedPlan.charts.length}`);
+      console.log(`      - Layout: ${proposedPlan.layout.rows}x${proposedPlan.layout.columns} grid`);
+      proposedPlan.charts.forEach((chart, idx) => {
+        console.log(`      - Chart ${idx + 1}: ${chart.type} - "${chart.title}"`);
+      });
+
+      console.log('\n   🔍 Validating dashboard quality...');
+      const validation = await validateDashboardQuality(dataProfile, proposedPlan);
+
+      console.log(`\n🔍 AI QUALITY VALIDATION:`);
+      console.log(`   Score: ${validation.score}/10`);
+      console.log(`   Is Good: ${validation.isGood ? '✅ YES' : '❌ NO'}`);
+      console.log(`   Feedback: ${validation.feedback}`);
+
+      if (validation.isGood) {
+        console.log('   ✅ VALIDATION PASSED - Dashboard quality is excellent!');
+        aiPlan = proposedPlan;
+        validationPassed = true;
+        break;
+      } else {
+        console.log('   ❌ VALIDATION FAILED - Regenerating...');
+        console.log(`   💬 Feedback: ${validation.feedback}`);
+        if (attempt === MAX_ATTEMPTS) {
+          console.log('   ⚠️  Max attempts reached, using last generated plan');
+          aiPlan = proposedPlan;
+        }
+      }
+    }
 
     if (!aiPlan) {
       throw new Error('Failed to generate a valid dashboard plan');

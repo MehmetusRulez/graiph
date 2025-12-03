@@ -208,11 +208,6 @@ For EACH metric × EACH dimension:
 - Example: Revenue (X) vs Profit (Y) with bubble size = Market Share
 - Type: "bubble"
 
-**WATERFALL CHART** - Shows cumulative effect of sequential values
-- Use when: Breaking down how values contribute to a total
-- Example: How revenue components add up to total, Profit breakdown
-- Type: "waterfall"
-
 **VIOLIN PLOT** - Distribution visualization showing density
 - Use when: Comparing distributions across categories (better than boxplot for patterns)
 - Example: Salary distributions by department, Performance scores by region
@@ -238,11 +233,34 @@ For EACH metric × EACH dimension:
 - Example: Quarterly sales vs target, Performance score
 - Type: "gauge"
 
-**WHEN TO USE ADVANCED CHARTS:**
-✅ Use when they provide BETTER insight than basic charts
-✅ Use when the data pattern matches the chart strength
-✅ Limit to 1-2 advanced charts per dashboard (don't overwhelm)
-❌ Don't use just to show off - basic charts are often better
+🚨🚨🚨 **MANDATORY CHART DIVERSITY REQUIREMENTS - PHASE 1 BRAINSTORMING:** 🚨🚨🚨
+
+**YOU MUST GENERATE IDEAS FOR ALL 17 CHART TYPES:**
+When brainstorming in Phase 1, you MUST systematically generate chart ideas using ALL of these types:
+
+**BASIC TYPES (Use selectively):**
+1. bar, 2. line, 3. pie, 4. histogram, 5. scatter, 6. boxplot
+
+**ADVANCED TYPES (Use AGGRESSIVELY - minimum 5-8 of these):**
+7. heatmap, 8. kpi, 9. area, 10. stacked_area, 11. bubble, 12. donut, 13. violin, 14. treemap, 15. radar, 16. funnel, 17. gauge
+
+🚨 **CRITICAL QUALITY RULES FOR PHASE 1:**
+- ✅ **MANDATORY:** Generate ideas that make LOGICAL SENSE for the data
+- ✅ **GOAL:** For each chart type, ONLY generate ideas if it's the RIGHT FIT for the data pattern
+- ✅ **QUALITY:** Each idea must have a clear, logical reason why that specific chart type is appropriate
+- ❌ **FORBIDDEN:** Generating chart ideas just to use different types - ONLY generate if it makes sense
+
+**WHEN TO USE EACH ADVANCED CHART:**
+✅ **area** - ALWAYS use for time series instead of line when showing magnitude/volume
+✅ **stacked_area** - Use when showing part-to-whole trends over time
+✅ **bubble** - Use for ANY 3-variable relationship (X, Y, size)
+✅ **donut** - Use INSTEAD of pie for modern look
+✅ **violin** - Use INSTEAD of boxplot for distribution comparisons
+✅ **treemap** - Use for hierarchical proportions (category → subcategory)
+✅ **radar** - Use for multi-metric comparisons (comparing products/regions on multiple dimensions)
+✅ **funnel** - Use for sequential stages, conversion flows
+✅ **gauge** - Use for KPI progress toward goal (e.g., "Sales vs Target")
+✅ **heatmap** - Use for correlation matrices, time-based patterns
 
 **OUTPUT FORMAT - JSON ONLY:**
 
@@ -253,7 +271,7 @@ For EACH metric × EACH dimension:
   "allChartIdeas": [
     {
       "title": "Clear, professional chart title",
-      "type": "kpi|line|bar|column|area|stacked_area|pie|donut|scatter|bubble|histogram|boxplot|violin|heatmap|treemap|waterfall|funnel|radar|gauge",
+      "type": "kpi|line|bar|column|area|stacked_area|pie|donut|scatter|bubble|histogram|boxplot|violin|heatmap|treemap|funnel|radar|gauge",
       "mapping": {
         "x": "column_name or null",
         "y": "column_name or null",
@@ -765,7 +783,7 @@ You MUST use AT LEAST 7-9 DIFFERENT chart types for 10-12 charts. The user wants
 - 1 Correlation (Scatter, Bubble)
 - 1 Composition (Pie, Donut, Treemap)
 - 1-2 Trend charts (Line, Area, Stacked Area)
-- 1-2 ADVANCED charts (Waterfall, Funnel, Radar, Gauge, Heatmap)
+- 1-2 ADVANCED charts (Funnel, Radar, Gauge, Heatmap)
 
 **IMPORTANT:** Return your response as a valid JSON object.
 
@@ -901,21 +919,36 @@ The user has provided you with a comprehensive list of chart ideas. Your job is 
 3. **1 Distribution Chart** → Histogram, Boxplot, or Violin showing data spread
 4. **1 Correlation/Relationship Chart** → Scatter, Bubble showing relationships
 5. **1 Composition Chart** → Pie, Donut, or Treemap showing part-to-whole
-6. **PLUS 1-2 Advanced Charts** → Area, Stacked Area, Waterfall, Funnel, Radar, Gauge, Heatmap
+6. **PLUS 1-2 Advanced Charts** → Area, Stacked Area, Funnel, Radar, Gauge, Heatmap
 
-✅ **CHART TYPE DIVERSITY RULES:**
-- NO chart type can exceed 25% of total (e.g., max 3 bars in a 12-chart dashboard)
-- MUST use at least ONE advanced chart type (area, stacked_area, waterfall, funnel, radar, gauge, heatmap, treemap, violin, bubble)
-- PREFER variety: 8 different types in 8 charts > 4 types in 8 charts
+✅ **CHART TYPE DIVERSITY RULES (ULTRA-STRICTLY ENFORCED - FAILURE = REJECTION):**
+- 🚨 **CRITICAL:** NO chart type can exceed 15% of total (e.g., max 1 bar in 10-chart dashboard, max 2 bars in 12-chart dashboard)
+- 🚨 **MANDATORY ADVANCED QUOTA:** MUST use AT LEAST 5-7 DIFFERENT advanced chart types (area, stacked_area, funnel, radar, gauge, heatmap, treemap, violin, bubble, donut)
+- 🚨 **ULTIMATE GOAL:** Aim for 100% DIVERSITY - Every chart should be a DIFFERENT type if possible
+- 🚨 **FORBIDDEN:** Using ANY basic chart type (bar, line, scatter, pie, histogram, boxplot) more than ONCE unless absolutely necessary
+- 🚨 **PREFER ADVANCED OVER BASIC:** When choosing between basic and advanced charts, ALWAYS choose advanced (e.g., area instead of line, donut instead of pie, violin instead of boxplot, bubble instead of scatter)
 
-**GOOD EXAMPLES (COPY THESE PATTERNS):**
-- 8 charts: KPI, Line, Bar, Column, Pie, Histogram, Scatter, Boxplot = 8 types ✓✓✓
-- 10 charts: 2 KPI, Line, Area, Bar, Column, Donut, Histogram, Scatter, Bubble = 9 types ✓✓✓
-- 12 charts: 2 KPI, Line, Area, Stacked Area, Bar, Column, Pie, Treemap, Histogram, Scatter, Waterfall = 11 types ✓✓✓
+**ADVANCED CHART TYPES TO USE (MANDATORY: Use AT LEAST 5-7 of these in EVERY dashboard):**
+1. **area** - ALWAYS use for time series (PREFER over line)
+2. **stacked_area** - Multiple trends combined
+3. **bubble** - 3-variable relationships (PREFER over scatter)
+4. **donut** - Modern pie chart (PREFER over pie)
+5. **violin** - Distribution comparison (PREFER over boxplot)
+6. **treemap** - Hierarchical proportions
+7. **radar** - Multi-metric comparison
+8. **funnel** - Conversion stages
+9. **gauge** - Progress toward goal
+10. **heatmap** - Correlation matrices, patterns
 
-**BAD EXAMPLES (NEVER DO THIS):**
-- 6 charts: KPI, 4 Bars, Line = 3 types ✗✗✗ (too many bars, too few types)
-- 8 charts: 2 KPI, 5 Bars, Pie = 3 types ✗✗✗ (way too many bars)
+**EXCELLENT EXAMPLES (AIM FOR THIS LEVEL OF DIVERSITY - 100% UNIQUE TYPES):**
+- 8 charts: KPI, Area, Donut, Bubble, Violin, Treemap, Radar = 8 DIFFERENT types ✓✓✓ (100% diversity! 6 advanced!)
+- 10 charts: KPI, Area, Stacked Area, Bubble, Donut, Violin, Treemap, Funnel, Gauge = 10 DIFFERENT types ✓✓✓ (PERFECT! 9 advanced!)
+- 12 charts: 2 KPI, Area, Stacked Area, Bubble, Donut, Violin, Treemap, Funnel, Gauge, Radar, Heatmap = 12 DIFFERENT types ✓✓✓ (AMAZING! 10 advanced!)
+
+**BAD EXAMPLES (NEVER DO THIS - WILL BE REJECTED):**
+- 6 charts: KPI, 4 Bars, Line = 3 types ✗✗✗ (WAY too many bars, too few types)
+- 8 charts: 2 KPI, 5 Bars, Pie = 3 types ✗✗✗ (COMPLETELY UNACCEPTABLE - too many bars)
+- 10 charts: 3 KPI, 3 Bars, 2 Lines, Pie, Histogram = 5 types ✗✗✗ (Too repetitive, needs MORE advanced types)
 
 ❌ **AUTO-REJECT (don't even consider):**
 - Redundant charts (Revenue by Region AND Sales by Region)
@@ -936,7 +969,7 @@ The user has provided you with a comprehensive list of chart ideas. Your job is 
       "id": "chart-1",
       "title": "Professional, business-focused title",
       "description": "ONE sentence: What business decision this enables",
-      "type": "kpi|line|bar|column|area|stacked_area|pie|donut|scatter|bubble|histogram|boxplot|violin|heatmap|treemap|waterfall|funnel|radar|gauge",
+      "type": "kpi|line|bar|column|area|stacked_area|pie|donut|scatter|bubble|histogram|boxplot|violin|heatmap|treemap|funnel|radar|gauge",
       "mapping": {
         "x": "column_name or null",
         "y": "column_name or null",
@@ -1097,6 +1130,29 @@ You will receive a list of proposed charts. For EACH chart, you must:
 ✅ Binning is appropriate for the data (decades for long time periods, months for short periods)
 ✅ Axes ranges make sense for the data type
 
+🎨 **QUESTION 4: Does this dashboard have MAXIMUM CHART TYPE DIVERSITY?**
+
+🚨🚨🚨 **NEW CRITICAL REQUIREMENT - DIVERSITY ENFORCEMENT** 🚨🚨🚨
+
+**ASK YOURSELF AFTER EVALUATING ALL CHARTS:**
+- "How many DIFFERENT chart types are in my final list?"
+- "Am I using too many of the same basic chart type (bar, line, scatter, pie)?"
+- "Am I using enough ADVANCED chart types (area, bubble, treemap, funnel, gauge, radar, violin, donut, stacked_area, heatmap)?"
+
+**MANDATORY DIVERSITY RULES:**
+1. **Count chart types in your KEPT charts**
+2. **Calculate diversity percentage:** (Unique types / Total charts kept) × 100
+3. **MINIMUM DIVERSITY: 80%** (e.g., 10 charts should have at least 8 different types)
+4. **ADVANCED CHART QUOTA: At least 50%** of kept charts should be advanced types
+
+**IF DIVERSITY < 80%:**
+- ELIMINATE duplicate basic chart types (extra bars, extra lines, etc.)
+- KEEP more advanced chart types to reach 80%+ diversity
+
+**EXAMPLES:**
+❌ BAD: 10 charts kept = 3 Bars, 2 Lines, 2 Scatter, 1 Pie, 1 KPI, 1 Histogram = 6 types (60% diversity) → **FAIL! Eliminate 2 bars, 1 line, 1 scatter**
+✅ GOOD: 10 charts kept = 1 KPI, 1 Area, 1 Bubble, 1 Donut, 1 Violin, 1 Treemap, 1 Funnel, 1 Gauge, 1 Radar = 9 types (90% diversity) → **EXCELLENT!**
+
 **YOUR EVALUATION PROCESS:**
 
 For EACH chart in the list, follow this EXACT process:
@@ -1112,7 +1168,13 @@ For EACH chart in the list, follow this EXACT process:
 4. **Ask Question 3:** Is this readable and well-designed?
    - Score 1-10 (1=unreadable, 10=crystal clear)
    - If score < 6 → ELIMINATE
-   - If score >= 6 → KEEP
+   - If score >= 6 → KEEP (but check Question 4)
+
+5. **AFTER ALL INDIVIDUAL EVALUATIONS, Ask Question 4 (DIVERSITY CHECK):**
+   - Count total chart types in KEPT charts
+   - Calculate diversity percentage
+   - If diversity < 80% → Go back and ELIMINATE duplicate basic types, KEEP more advanced types
+   - Repeat until diversity >= 80%
 
 **OUTPUT FORMAT (JSON only):**
 
@@ -1149,18 +1211,60 @@ For EACH chart in the list, follow this EXACT process:
     "eliminationReasons": {
       "semanticErrors": number,
       "lowBusinessValue": number,
-      "poorReadability": number
+      "poorReadability": number,
+      "diversityEnforcement": number
+    },
+    "diversityMetrics": {
+      "uniqueChartTypes": number,
+      "totalChartsKept": number,
+      "diversityPercentage": number,
+      "advancedChartCount": number,
+      "advancedChartPercentage": number,
+      "chartTypeCounts": {
+        "kpi": number,
+        "bar": number,
+        "line": number,
+        "pie": number,
+        "histogram": number,
+        "scatter": number,
+        "boxplot": number,
+        "area": number,
+        "stacked_area": number,
+        "bubble": number,
+        "donut": number,
+        "violin": number,
+        "treemap": number,
+        "radar": number,
+        "funnel": number,
+        "gauge": number,
+        "heatmap": number
+      }
     }
   }
 }
 
-**CRITICAL RULES:**
+**CRITICAL RULES - READ 10 TIMES:**
 
 1. **BE RUTHLESS** - When in doubt, ELIMINATE
 2. **SEMANTIC ERRORS ARE AUTO-ELIMINATE** - Any chart averaging years/dates/IDs must be eliminated
-3. **QUALITY > QUANTITY** - Better to have 8 excellent charts than 12 mediocre ones
-4. **NO MERCY FOR NONSENSE** - If a chart doesn't make sense, ELIMINATE IT
-5. **THINK LIKE A CEO** - Would a busy executive find this chart valuable?
+3. **QUALITY > DIVERSITY** - ONLY keep charts that make PERFECT LOGICAL SENSE for the data
+4. **NO MERCY FOR NONSENSE** - If a chart doesn't make sense, ELIMINATE IT IMMEDIATELY
+5. **THINK LIKE A CEO** - Would a busy executive find this chart valuable and logical?
+6. **PROFESSIONAL VALIDATION REQUIRED** - Each chart must answer: "Is this chart type the BEST way to show this specific data relationship?"
+
+🚨🚨🚨 **NEW MANDATORY RULE - PROFESSIONAL LOGIC CHECK:** 🚨🚨🚨
+
+For EVERY chart, you MUST ask yourself:
+**"Is [CHART_TYPE] the MOST LOGICAL, PROFESSIONAL way to visualize [DATA_RELATIONSHIP]?"**
+
+**EXAMPLES OF ELIMINATION:**
+❌ Using a FUNNEL chart for non-sequential data → ELIMINATE
+❌ Using a RADAR chart when data doesn't have multiple comparable metrics → ELIMINATE
+❌ Using a GAUGE chart when there's no target/goal to compare against → ELIMINATE
+❌ Using a TREEMAP for data without hierarchical structure → ELIMINATE
+❌ Using ADVANCED charts just for variety when a simple bar/line would be clearer → ELIMINATE
+
+**ONLY KEEP charts where the chart type is the PERFECT match for the data pattern**
 
 Your evaluation will determine what the user sees. DO NOT let bad charts through. The user is counting on you to be the final quality gate.
 
